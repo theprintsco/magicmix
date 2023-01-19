@@ -118,7 +118,7 @@ def _pil_from_latents(vae, latents):
 def _load_tools(device: str, scheduler_type):
 
     vae = AutoencoderKL.from_pretrained(
-        "CompVis/stable-diffusion-v1-4",
+        "CompVis/stable-diffusion-v1-3",
         subfolder="vae",
         use_auth_token=os.getenv("HF_TOKEN"),
         torch_dtype=torch.float16,
@@ -128,7 +128,7 @@ def _load_tools(device: str, scheduler_type):
     text_encoder = CLIPTextModel.from_pretrained("openai/clip-vit-large-patch14")
 
     unet = UNet2DConditionModel.from_pretrained(
-        "CompVis/stable-diffusion-v1-4",
+        "CompVis/stable-diffusion-v1-3",
         subfolder="unet",
         use_auth_token=os.getenv("HF_TOKEN"),
         torch_dtype=torch.float16,
